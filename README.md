@@ -1,1 +1,1 @@
-Advanced Javascript, homework 5_6
+Advanced Javascript, homework 7_8
