@@ -1,0 +1,1 @@
+Advanced Javascript, homework 5_6
