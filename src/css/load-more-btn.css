@@ -1,0 +1,30 @@
+.load-more-btn {
+  width: 125px;
+  height: 40px;
+  margin-top: 40px;
+  border-radius: 8px;
+  background-color: #4E75FF;
+
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: #FFFFFF;
+
+  transition: background-color 0.3s ease-in-out;
+
+  display: none;
+}
+
+.load-more-btn.active {
+  display: block;
+}
+
+.load-more-btn:hover {
+  background-color: #6C8CFF;
+}
+
+.load-more-btn-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

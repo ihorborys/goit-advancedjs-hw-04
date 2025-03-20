@@ -1,8 +1,8 @@
-function createCardsMarkup(images)  {
+function createCardsMarkup(images) {
   return images
     .map(
-      ({webformatURL, largeImageURL, tags, likes, views, comments, downloads}) =>
-    `<li class="gallery-card">
+      ({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) =>
+        `<li class="gallery-card">
       <a class="gallery-link" href="${largeImageURL}">
         <img
         class="gallery-img"
@@ -27,10 +27,10 @@ function createCardsMarkup(images)  {
           </ul>
         </div>
       </a>
-    </li>`
-  )
-    .join('')
+    </li>`,
+    )
+    .join('');
 }
 
 
-export {createCardsMarkup}
+export { createCardsMarkup };
