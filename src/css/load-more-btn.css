@@ -1,4 +1,8 @@
 .load-more-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 125px;
   height: 40px;
   margin-top: 40px;
@@ -11,20 +15,12 @@
   color: #FFFFFF;
 
   transition: background-color 0.3s ease-in-out;
-
-  display: none;
-}
-
-.load-more-btn.active {
-  display: block;
 }
 
 .load-more-btn:hover {
   background-color: #6C8CFF;
 }
 
-.load-more-btn-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.is-hidden {
+  display: none;
 }

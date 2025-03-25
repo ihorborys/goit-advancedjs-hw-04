@@ -8,5 +8,12 @@ const refs = {
 
 const ACTIVE_CLASS = 'active';
 
+const photoQueryParams = {
+  page: 1,
+  perPage: 15,
+  query: '',
+  maxPage: 1,
+};
 
-export { refs, ACTIVE_CLASS };
+
+export { refs, ACTIVE_CLASS, photoQueryParams };

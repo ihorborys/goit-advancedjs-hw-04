@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { page, perPage } from './utils/pagination.js';
+import { photoQueryParams } from './utils/consts.js';
 
 
 const BASE_URL = 'https://pixabay.com/api/';
@@ -17,12 +17,12 @@ async function getImages(query) {
     image_type: IMAGE_TYPE,
     orientation: ORIENTATION,
     safesearch: SAFESEARCH,
-    per_page: perPage,
-    page,
+    per_page: photoQueryParams.perPage,
+    page: photoQueryParams.page,
   };
 
   const response = await axios.get(BASE_URL, { params });
-  
+
   return response.data;
 }
 

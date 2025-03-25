@@ -14,7 +14,7 @@ export default class LoadMoreButton {
 
   enable() {
     this.button.disabled = false;
-    this.button.textContent = this.prevText;
+    this.button.textContent = this.prevText || this.button.textContent;
   }
 
   hide() {
