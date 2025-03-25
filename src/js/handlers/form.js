@@ -1,4 +1,4 @@
-import { getImages, q } from '../pixabay-api.js';
+import { getImages } from '../pixabay-api.js';
 import { noFoundImages, noFoundQuery } from '../services/izitoast.js';
 import { createCardsMarkup } from '../render-functions.js';
 import { ACTIVE_CLASS, refs } from '../utils/consts.js';
@@ -20,7 +20,6 @@ async function handleSearch(event) {
 
   try {
     const images = await getImages(userQuery);
-    console.log(q);
     loader.classList.remove(ACTIVE_CLASS);
 
     if (!images.total) {
@@ -30,9 +29,8 @@ async function handleSearch(event) {
     }
 
     refs.gallery.innerHTML = createCardsMarkup(images.hits);
-    lightBox.refresh();
     refs.loadMoreBtn.classList.add(ACTIVE_CLASS);
-    // loadMoreImages();
+    lightBox.refresh();
 
 
   } catch (error) {
@@ -44,10 +42,5 @@ async function handleSearch(event) {
   }
 }
 
-function loadMoreImages() {
-  // refs.gallery.insertAdjacentHTML('beforeend', createCardsMarkup(images.hits));
-  console.log('Hello!');
-}
 
-
-export { handleSearch, loadMoreImages };
+export { handleSearch };
