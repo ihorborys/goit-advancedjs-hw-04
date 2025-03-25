@@ -1,6 +1,7 @@
-import { photoQueryParams } from '../utils/consts.js';
+import { photoQueryParams, refs } from '../utils/consts.js';
 import { loadmoreButton } from '../../main.js';
 import { getImages } from '../pixabay-api.js';
+import { createCardsMarkup } from '../render-functions.js';
 
 
 async function handleLoadMore() {
@@ -10,6 +11,17 @@ async function handleLoadMore() {
   try {
     const images = await getImages(photoQueryParams);
     console.log(images);
+
+    const markup = createCardsMarkup(images.hits);
+
+    refs.gallery.insertAdjacentHTML('beforeend', markup);
+    loadmoreButton.enable();
+
+    //Перевірка на кінець колекції
+    if (photoQueryParams.page === photoQueryParams.maxPage) {
+      loadmoreButton.hide();
+      loadmoreButton.button.removeEventListener('click', handleLoadMore);
+    }
 
   } catch (error) {
     console.log(error);
