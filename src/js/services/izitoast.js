@@ -1,5 +1,5 @@
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 
 const noFoundQuery = () => {
@@ -8,7 +8,7 @@ const noFoundQuery = () => {
     message: '',
     position: 'topRight',
     color: 'red',
-    icon: ""
+    icon: '',
   });
 };
 
@@ -18,9 +18,18 @@ const noFoundImages = () => {
     message: '',
     position: 'topRight',
     color: 'red',
-    icon: ""
+    icon: '',
+  });
+};
+
+const endOfCollection = () => {
+  iziToast.info({
+    title: `We're sorry, but you've reached the end of search results.`,
+    message: '',
+    position: 'topRight',
+    color: 'blue',
   });
 };
 
 
-export {noFoundImages, noFoundQuery};
+export { noFoundImages, noFoundQuery, endOfCollection };

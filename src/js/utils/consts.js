@@ -10,7 +10,7 @@ const ACTIVE_CLASS = 'active';
 
 const photoQueryParams = {
   page: 1,
-  perPage: 15,
+  perPage: 3,
   query: '',
   maxPage: 1,
 };
