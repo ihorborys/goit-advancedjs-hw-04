@@ -3,6 +3,7 @@ import { loadmoreButton } from '../../main.js';
 import { getImages } from '../pixabay-api.js';
 import { createCardsMarkup } from '../render-functions.js';
 import { endOfCollection } from '../services/izitoast.js';
+import { scroll } from '../services/scroll.js';
 
 
 async function handleLoadMore() {
@@ -13,12 +14,14 @@ async function handleLoadMore() {
 
   try {
     const images = await getImages(photoQueryParams);
-    console.log(images);
 
     const markup = createCardsMarkup(images.hits);
 
     refs.loader.classList.remove(ACTIVE_CLASS);
+
     refs.gallery.insertAdjacentHTML('beforeend', markup);
+    
+    scroll();
 
     loadmoreButton.show();
     loadmoreButton.enable();

@@ -5,6 +5,7 @@ import { ACTIVE_CLASS, photoQueryParams, refs } from '../utils/consts.js';
 import { lightBox } from '../services/simplelightbox.js';
 import { loadmoreButton } from '../../main.js';
 import { handleLoadMore } from './load-more.js';
+import { scroll } from '../services/scroll.js';
 
 
 async function handleSearch(event) {
@@ -33,8 +34,6 @@ async function handleSearch(event) {
     loader.classList.remove(ACTIVE_CLASS);
 
     photoQueryParams.maxPage = Math.ceil(images.total / images.hits.length);
-    console.log(images);
-    console.log(photoQueryParams.maxPage);
 
     if (!images.total) {
       refs.gallery.innerHTML = '';
@@ -43,6 +42,8 @@ async function handleSearch(event) {
     }
 
     refs.gallery.innerHTML = createCardsMarkup(images.hits);
+    
+    scroll();
 
     if (photoQueryParams.maxPage === 1) {
       return;
@@ -51,8 +52,6 @@ async function handleSearch(event) {
     loadmoreButton.show();
     loadmoreButton.enable();
     loadmoreButton.button.addEventListener('click', handleLoadMore);
-
-    refs.loadMoreBtn.classList.add(ACTIVE_CLASS);
 
     lightBox.refresh();
 

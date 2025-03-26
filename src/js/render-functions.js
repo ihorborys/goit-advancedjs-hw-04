@@ -2,8 +2,8 @@ function createCardsMarkup(images) {
   return images
     .map(
       ({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) =>
-        `<li class="gallery-card">
-      <a class="gallery-link" href="${largeImageURL}">
+        `<li class="gallery-card js-gallery-card">
+      <a class="gallery-link js-gallery-link" href="${largeImageURL}">
         <img
         class="gallery-img"
         src="${webformatURL}"
